@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Target the scrollbar track */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+@layer utilities {
+  .button {
+    @apply bg-black border border-white/10 px-8 py-2
+     text-sm font-medium text-white hover:bg-[#0c0c0c] smooth;
+  }
+  .smooth {
+    @apply transition-all ease-in-out duration-150;
+  }
+  .input {
+    @apply outline-none border-b border-white/10 w-full py-2 pr-4
+     placeholder:text-white/20 bg-transparent hover:border-white/50 smooth;
+  }
+  .input-disabled {
+    @apply outline-none border-b border-white/10 w-full px-4 py-1 bg-[#0c0c0c];
+  }
+  .label {
+    @apply text-white text-white/70 py-6 
+              w-full text-center border-b border-white/5;
+  }
+  .filter_tab_item {
+    @apply bg-black smooth hover:bg-[#050505] text-white;
+  }
+}
