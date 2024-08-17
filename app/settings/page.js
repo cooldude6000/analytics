@@ -129,7 +129,7 @@ export default SettingsPage;
 
 export const CodeComp = () => {
   let codeString = `
- const url = "http://localhost:3000/api/events";
+ const url = "https://analytics3.vercel.app/api/events";
   const headers = {
     "Content-Type": "application/json",
     Authorization: "Bearer {{apiKey}}",

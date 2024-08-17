@@ -10,7 +10,8 @@
   const params = new URLSearchParams(queryString);
   var source = params.get("utm");
 
-  var endpoint = "http://localhost:3000/api/track";
+  var endpoint = "https://analytics3.vercel.app/api/track";
+  //http://localhost:3000/api/track
 
   function generateSessionId() {
     return "session-" + Math.random().toString(36).substr(2, 9);
@@ -27,7 +28,7 @@
 
       expirationTimestamp = Date.now() + 10 * 60 * 1000; // 10 minutes?idk lol
 
-      
+
       localStorage.setItem("session_id", sessionId);
       localStorage.setItem("session_expiration_timestamp", expirationTimestamp);
       trackSessionStart();
@@ -49,7 +50,7 @@
       localStorage.removeItem("session_id");
       localStorage.removeItem("session_expiration_timestamp");
       trackSessionEnd();
-     
+
       initializeSession();
     }
   }
