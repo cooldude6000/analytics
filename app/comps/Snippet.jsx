@@ -7,12 +7,12 @@ import { sunburst } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 function Snippet() {
   const { website } = useParams();
-  const JS_codeString = `<script defer data-domain="${website}" src="http://localhost:3000/tracking-script.js"></script>`;
+  const JS_codeString = `<script defer data-domain="${website}" src="https://analytics3.vercel.app/tracking-script.js"></script>`;
   const NextJS_codeString = `
 <Script
 defer
 data-domain="${website}"
-src="http://localhost:3000/tracking-script.js"/>
+src="https://analytics3.vercel.app/tracking-script.js"/>
    `;
   return (
     <Tabs defaultValue="Js/React" className="w-full space-y-5">

@@ -12,7 +12,12 @@ function SignInPage() {
   const router = useRouter();
   const signIn = async () => {
     if (typeof window !== "undefined") {
-      const redirectTo = "http://localhost:3000/dashboard";
+      const protocol = window.location.protocol;
+      const hostname = window.location.hostname;
+      const redirectTo =
+        hostname === "localhost"
+          ? `${protocol}//${hostname}:3000/dashboard`
+          : `${protocol}//${hostname}/dashboard`;
       await supabase.auth.signInWithOAuth({
         provider: "google",
         options: {
